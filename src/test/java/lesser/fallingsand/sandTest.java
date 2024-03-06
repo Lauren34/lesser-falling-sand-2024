@@ -1,20 +1,21 @@
 package lesser.fallingsand;
 
+import lesser.fallingsand.Sand;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class SandTest {
 
     @Test
     public void string() {
-        // given
+        // given - set up paramaters
         Sand sand = new Sand();
 
-        // when
+        // when - the one thing you are testing gets tested
         String actual = sand.toString();
 
-        // then
+        // then - check results
         assertEquals("000\n000\n000\n", actual);
     }
 
@@ -41,5 +42,30 @@ class SandTest {
 
         // then
         assertEquals("000\n010\n000\n", sand.toString());
+    }
+    @Test
+    public void fallOnGround() {
+        // given
+        Sand sand = new Sand();
+        sand.put(1, 2);
+
+        // when
+        sand.fall();
+
+        // then
+        assertEquals("000\n000\n010\n", sand.toString());
+    }
+    @Test
+    public void fallOnOtherSand() {
+        // given
+        Sand sand = new Sand();
+        sand.put(1, 1);
+        sand.put(1, 2);
+
+        // when
+        sand.fall();
+
+        // then
+        assertEquals("000\n010\n010\n", sand.toString());
     }
 }
