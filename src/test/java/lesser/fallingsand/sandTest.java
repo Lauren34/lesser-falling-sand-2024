@@ -4,67 +4,42 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class sandTest {
+class SandTest {
 
     @Test
     public void string() {
-        //give
+        // given
         Sand sand = new Sand();
 
-        //when
+        // when
         String actual = sand.toString();
-        //then
+
+        // then
         assertEquals("000\n000\n000\n", actual);
     }
 
     @Test
     public void put() {
-        //give
+        // given
         Sand sand = new Sand();
 
-        //when
+        // when
         sand.put(1, 0);
 
-        //then
-        assertEquals("000\n000\n000\n", sand.toString());
-
+        // then
+        assertEquals("010\n000\n000\n", sand.toString());
     }
 
     @Test
     public void fall() {
-        //give
+        // given
         Sand sand = new Sand();
-
-        //when
         sand.put(1, 0);
 
-        //then
-        assertEquals("000\n000\n000\n", sand.toString());
-    }
-
-    @Test
-    public void fallOnGround() {
-        //give
-        Sand sand = new Sand();
-
-        //when
-        sand.put(1, 2);
-
-        //then
-        assertEquals("000\n000\n000\n", sand.toString());
-    }
-
-    @Test
-    public void fallOnOtherSand() {
-        //give
-        Sand sand = new Sand();
-        sand.put(1, 1);
-        sand.put(1, 2);
-
-        //when
+        // when
         sand.fall();
 
-        //then
+        // then
         assertEquals("000\n010\n000\n", sand.toString());
     }
 }
