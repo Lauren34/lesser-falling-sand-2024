@@ -35,10 +35,10 @@ public class Sand {
 
 
     public void fall() {
-        for (int y = field.length - 2; y >= 0; y--) {
-            for (int x = 0; x < field.length; x++) {
+        for (int y = field.length - 2; y >= 0; y--){
+            for (int x = 0; x < field.length; x++){
                 if (field[y][x] == 1 && field[y + 1][x] == 0){
-                    if (y < field.length - 1 && field[y + 1][x] == 0) { // If the cell below is empty
+                    if (y < field.length - 1 && field[y + 1][x] == 0){
                         field[y + 1][x] = 1;
                         field[y][x] = 0;
 
