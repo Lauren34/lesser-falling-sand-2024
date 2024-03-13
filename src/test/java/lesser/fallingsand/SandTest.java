@@ -2,14 +2,14 @@ package lesser.fallingsand;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SandTest {
 
     @Test
     public void string() {
         // given - set up paramaters
-        Sand sand = new Sand();
+        Sand sand = new Sand(3, 3);
 
         // when - the one thing you are testing gets tested
         String actual = sand.toString();
@@ -21,7 +21,7 @@ class SandTest {
     @Test
     public void put() {
         // given
-        Sand sand = new Sand();
+        Sand sand = new Sand(3, 3);
 
         // when
         sand.put(1, 0);
@@ -33,7 +33,7 @@ class SandTest {
     @Test
     public void fall() {
         // given
-        Sand sand = new Sand();
+        Sand sand = new Sand(3, 3);
         sand.put(1, 0);
 
         // when
@@ -46,7 +46,7 @@ class SandTest {
     @Test
     public void fallOnGround() {
         // given
-        Sand sand = new Sand();
+        Sand sand = new Sand(3, 3);
         sand.put(1, 2);
 
         // when
@@ -57,11 +57,11 @@ class SandTest {
     }
 
     @Test
-    public void fallOnOtherSand() {
+    public void fallSimultaneously() {
         // given
-        Sand sand = new Sand();
+        Sand sand = new Sand(3, 3);
+        sand.put(1, 0);
         sand.put(1, 1);
-        sand.put(1, 2);
 
         // when
         sand.fall();
