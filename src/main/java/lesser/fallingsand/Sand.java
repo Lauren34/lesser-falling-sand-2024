@@ -7,31 +7,42 @@ class Sand {
     private final int[][] field;
     private final Random random;
 
+    private int height;
+
+    private int width;
+
     public Sand(int width, int height) {
+        this.height = height;
+        this.width = width;
         field = new int[height][width];
         random = new Random();
     }
 
     public Sand(int width, int height, Random random) {
+        this.height = height;
+        this.width = width;
         field = new int[height][width];
         this.random = random;
     }
+
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        for (int y = 0; y < 3; y++) {
-            for (int x = 0; x < 3; x++) {
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
                 builder.append(field[y][x]);
             }
             builder.append("\n");
         }
         return builder.toString();
     }
+
     /**
      * @return the value in field
      */
     public int get(int x, int y) {
         return field[y][x];
     }
+
     /**
      * Sets the value in field to be 1
      */
