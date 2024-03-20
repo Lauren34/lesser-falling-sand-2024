@@ -8,7 +8,6 @@ public class Main {
         sand.randomSand(50);
         displaySand(sand);
 
-        System.out.println("Press Enter to make sand fall...");
         Scanner scanner = new Scanner(System.in);
         while (scanner.nextLine().isEmpty()) {
             sand.fall();

@@ -15,13 +15,14 @@ class SandTest {
         // given
         Sand sand = new Sand(3, 3);
         sand.put(1, 1);
-        sand.put(1, 0);
+        sand.put(1, 2);
+        sand.put(0, 2);
 
         // when
         sand.fall();
 
         // then
-        assertEquals("000\n000\n011\n", sand.toString());
+        assertEquals("000\n000\n111\n", sand.toString());
     }
 
     @Test
@@ -30,12 +31,13 @@ class SandTest {
         Sand sand = new Sand(3, 3);
         sand.put(1, 1);
         sand.put(1, 2);
+        sand.put(2, 2);
 
         // when
         sand.fall();
 
         // then
-        assertEquals("000\n000\n110\n", sand.toString());
+        assertEquals("000\n000\n111\n", sand.toString());
     }
 
     @Test

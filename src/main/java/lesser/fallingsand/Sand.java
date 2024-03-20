@@ -76,12 +76,13 @@ class Sand {
                                 field[y][x] = 0;
                                 field[y + 1][x - 1] = 1;
                             }
+
+
                         }
                     }
                 }
             }
+
         }
     }
 }
-
-
