@@ -6,9 +6,7 @@ import java.util.Random;
 class Sand {
     private final int[][] field;
     private final Random random;
-
     private int height;
-
     private int width;
 
     public Sand(int width, int height) {
